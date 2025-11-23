@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dean Todo Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="logo">Dean Todo</h1>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Cari tugas...">
+      <select id="langSelect">
+        <option value="id">Indonesia</option>
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="ja">日本語</option>
+      </select>
+      <button id="themeToggle" class="theme-toggle">
+        <span class="sun">Sun</span>
+        <span class="moon">Moon</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <h2 data-t="title">Tugas Saya</h2>
+
+    <!-- INPUT BARU -->
+    <div class="input-group">
+      <input type="text" id="taskInput" data-t="placeholder" placeholder="Tulis tugas baru...">
+      <input type="datetime-local" id="deadlineInput">
+      <select id="prioritySelect"></select>
+      <select id="categorySelect"></select>
+      <button id="addBtn">+</button>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrapper">
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+      <span id="progressText">0% selesai</span>
+    </div>
+
+    <!-- TABS FILTER -->
+    <div class="tabs">
+      <button class="tab active" data-filter="all">Semua</button>
+      <button class="tab" data-filter="active">Aktif</button>
+      <button class="tab" data-filter="completed">Selesai</button>
+    </div>
+
+    <!-- DAFTAR TUGAS -->
+    <ul id="taskList"></ul>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Dean Todo • Dibuat dengan cinta oleh kamu</p>
+  </footer>
+
+  <!-- TOAST UNDO -->
+  <div id="toast" class="toast">Tugas dihapus <span id="undoBtn">Undo</span></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
